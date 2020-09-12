@@ -1,0 +1,33 @@
+{
+  "name": "express_sequelize_post_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-hbs": "^2.3.4",
+    "express-session": "^1.17.1",
+    "express-session-sequelize": "^2.3.0",
+    "joi": "^17.2.1",
+    "mariadb": "^2.4.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "portfinder": "^1.0.28",
+    "sequelize": "^6.3.5",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0"
+  }
+}
