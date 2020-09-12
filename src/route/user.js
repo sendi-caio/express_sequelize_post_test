@@ -17,29 +17,36 @@ const schema = Joi.object({
 })
 
 const newForm = (req, res) => {
-  res.render('pages/newform')
+  const validateMsg = req.session.validateMsg
+  res.render('pages/newform', { validateMsg })
 }
 
 const postForm = (req, res) => {
+  const { username, password, email } = req.body
   const avatar = req.files.avatar
   const arrName = avatar.name.split('.')
   const extFile = arrName[arrName.length - 1]
   const avatarName = uuid() + '.' + extFile
 
   const data = {
-    username: req.body.username,
-    email: req.body.email,
-    password: bycrypt.hashSync(req.body.password, 10),
+    username: username,
+    email: email,
+    password: bycrypt.hashSync(password, 10),
     avatar: avatarName
   }
 
-  const { error, value } = schema.validate(data)
+  const { error, value } = schema.validate({ username, password, email })
 
   if (!error) {
     Model.user.create(data).then(() => {
+      req.session.validateMsg = undefined
       avatar.mv('./uploads/' + avatarName)
       res.redirect('/show')
     })
+  }
+  else {
+    req.session.validateMsg = error.details[0].message
+    res.redirect('/new')
   }
 }
 
