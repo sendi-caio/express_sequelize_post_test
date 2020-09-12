@@ -1,0 +1,11 @@
+<a href="/new" class="btn btn-primary">New User</a>
+<a href="/logout" class="btn btn-primary">Logout</a>
+
+{{#each data}}
+  <p>
+    username: {{username}}
+    email: {{email}}
+    <a href="/show/{{id}}">Detail</a>
+    <a href="/delete/{{id}}"">Delete</a>
+  </p>
+{{/each}}

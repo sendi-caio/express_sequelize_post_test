@@ -1,0 +1,8 @@
+<form class="form-signin" action="/post" method="POST" enctype="multipart/form-data">
+  <input type="text" name="username" class="form-control" autofocus="" placeholder="username" /> <br />
+  <input type="text" name="email" class="form-control" placeholder="email" /> <br />
+  <input type="password" name="password" class="form-control" placeholder="password" /> <br />
+  <input type="file" name="avatar" class="form-control" required="" /> <br />
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+  {{#if validateMsg}} {{validateMsg}} {{/if}}
+</form>
