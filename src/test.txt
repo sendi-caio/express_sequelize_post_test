@@ -1,0 +1,13 @@
+ const [ name,
+    email,
+    password,
+    birth_date,
+    avatar] = req.body
+  password = bcrypt.hashSync(req.body.password, 10)
+  await db.User.create({
+    name,
+    email,
+    password,
+    birth_date,
+    avatar
+  })

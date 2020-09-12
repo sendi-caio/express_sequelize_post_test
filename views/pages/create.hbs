@@ -1,0 +1,12 @@
+{{#contentFor 'body' }}
+  <h3>Form Create</h3>
+  <form action="/users/new" method="POST" >
+    Name : <input type="text" name="name"><br><br>
+    Email : <input type="email" name="email"><br><br>
+    Password : <input type="password" name="password"><br><br>
+    Birth date : <input type="date" name="birth_date"><br><br>
+    Avatar : <input type="file" name="avatar"><br><br>
+    <button type="submit">Insert</button>
+  </form>
+
+{{/contentFor}}
