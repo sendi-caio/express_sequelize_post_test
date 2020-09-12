@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin_x",
+    "password": "1234567",
+    "database": "express_sequelize",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "admin_x",
+    "password": "1234567",
+    "database": "express_sequelize",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin_x",
+    "password": "1234567",
+    "database": "express_sequelize",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
