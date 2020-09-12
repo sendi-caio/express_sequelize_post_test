@@ -1,13 +1,13 @@
 {
   "name": "express_sequelize_post_test",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Fork this repository to your github account - Create branch in your name - Push To Your Remote Repository - Pull Request To This Repository",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./index.js"
   },
-  "author": "",
+  "author": "Disa",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -22,12 +22,23 @@
     "mariadb": "^2.4.2",
     "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
+    "nodejs": "0.0.0",
     "portfinder": "^1.0.28",
     "sequelize": "^6.3.5",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.0",
+    "uuid4": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
-    "sequelize-cli": "^6.2.0"
-  }
+    "sequelize-cli": "^6.2.0",
+    "pm2": "^4.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disaada/express_sequelize_post_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/disaada/express_sequelize_post_test/issues"
+  },
+  "homepage": "https://github.com/disaada/express_sequelize_post_test#readme"
 }

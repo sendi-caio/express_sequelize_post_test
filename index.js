@@ -1,5 +1,5 @@
 // START PLEASE FILL THIS
-const yourName = 'please fill your name'
+const yourName = 'Disa'
 // END PLEASE FILL THIS
 
 const express = require('express')
@@ -8,6 +8,22 @@ const hbs = require('express-hbs')
 
 const app = express()
 app.use(express.static('public'))
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+
+const fileUpload = require('express-fileupload')
+app.use(fileUpload({
+  debug: true
+}))
+
+var session = require('express-session')
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: 'auto' }
+}))
 
 // VIEWS CONFIG START
 app.engine('hbs', hbs.express4({
@@ -20,7 +36,17 @@ app.set('views', __dirname + '/views')
 // VIEWS CONFIG END
 
 // ROUTES START
-app.get('/', (req, res) => res.render('pages/root', { yourName }))
+const login = require('./src/route/login')
+app.get('/', login.getLogin)
+app.post('/postlogin', login.postLogin)
+app.get('/logout', login.getLogout)
+
+const user = require('./src/route/user')
+app.get('/new', user.newForm)
+app.post('/post', user.postForm)
+app.get('/show', user.show)
+app.get('/show/:id', user.showByID)
+app.get('/delete/:id', user.deleteUser)
 // ROUTES END
 
 const start = async () => {
